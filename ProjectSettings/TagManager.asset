@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Gold
+  - GoldBig
+  - Water
+  - Obstacle
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Gold
+  - Water
+  - UI
+  - Karakter
+  - Ground
+  - GoldBig
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2644997297
+    locked: 0
+  - name: Walls
+    uniqueID: 716111567
+    locked: 0
+  - name: Water
+    uniqueID: 2062775659
+    locked: 0
+  - name: Obstacle
+    uniqueID: 308944875
+    locked: 0
+  - name: Karakter
+    uniqueID: 2087511773
+    locked: 0
