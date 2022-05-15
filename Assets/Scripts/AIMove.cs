@@ -8,20 +8,20 @@ public class AIMove : MonoBehaviour
     [SerializeField] private Transform target;
 
     private NavMeshAgent agent;
-   public bool CanSee;
     public float accelerationTime = 2f;
     public float maxSpeed = 2f;
     private Vector2 movement;
     private float timeLeft;
     public Rigidbody2D rb;
     private float xPositionOnPreviousFrame;
+    bool CanSee;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-       // CanSee = false;
+        CanSee = false;
     }
 
     // Update is called once per frame
@@ -39,13 +39,17 @@ public class AIMove : MonoBehaviour
             //Debug.Log("Rando");
         }
     }
-  
-
-    
-    private void Follow()
+    public void PullTrigger(Collider2D c)
+    {
+        if (c.gameObject.tag == "Player")
+        {
+            CanSee = true;
+        }
+    }
+        private void Follow()
     {
         agent.SetDestination(target.position);
-      /*  float xtrans = transform.position.x;
+        /*float xtrans = transform.position.x;
         if (xPositionOnPreviousFrame >= xtrans)
         {
             Flip(false);
@@ -59,7 +63,7 @@ public class AIMove : MonoBehaviour
         */
     }
 
-    /*void Flip(bool lookRight)
+   /* void Flip(bool lookRight)
     {
         Vector3 theScale = transform.localScale;
         if (lookRight)
@@ -91,13 +95,13 @@ public class AIMove : MonoBehaviour
     }
  
 
-    private void OnTriggerEnter2D(Collider2D c)
+    /*private void OnTriggerEnter2D(Collider2D c)
      {
-         if (c.gameObject.tag == "Player")
+         if (c.gameObject.tag == "Wizard")
          {
             Debug.Log("Your code goes here");
          }
-     }
+     }*/
 }
 
 

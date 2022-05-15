@@ -5,12 +5,10 @@ using UnityEngine;
 public class SwordScript : MonoBehaviour
   
 {
-   public AIMove boolBoy;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject g = GameObject.FindGameObjectWithTag("Enemy");
-        boolBoy = g.GetComponent<AIMove>();
+        
     }
 
     // Update is called once per frame
@@ -18,22 +16,26 @@ public class SwordScript : MonoBehaviour
     {
         
     }
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D c)
     {
-        if (collision.gameObject.tag == "Player")
+        gameObject.GetComponentInParent<AIMove>().PullTrigger(c);
+    }
+    /*void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wizard")
         {
-            boolBoy.CanSee = true;
+            CanSee = true;
 
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Wizard")
         {
-            boolBoy.CanSee = false;
+            CanSee = false;
 
         }
-    }
+    }*/
 
 }
 

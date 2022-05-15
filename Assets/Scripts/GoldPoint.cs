@@ -19,7 +19,7 @@ public class GoldPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (goldPoint == 4)
+        if (goldPoint == 14)
         {
             wincondition.SetActive(true);
             Time.timeScale = 0f;
@@ -42,7 +42,7 @@ public class GoldPoint : MonoBehaviour
 
         if (coin.gameObject.tag == "Obstacle")
         {
-            goldPoint -= 2;
+            goldPoint -= 4;
             goldText.text = goldPoint.ToString();
         }
     }
