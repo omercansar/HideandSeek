@@ -28,11 +28,13 @@ public class Dialogue : MonoBehaviour
             if (textComponent.text == lines[index])
             {
                 NextLine();
+                
             }
             else
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                Time.timeScale = 0f;
             }
         }
     }
@@ -62,7 +64,9 @@ public class Dialogue : MonoBehaviour
        }
        else
        {
+           Time.timeScale = 1f;
            gameObject.SetActive(false);
+           
        }
    }
 }

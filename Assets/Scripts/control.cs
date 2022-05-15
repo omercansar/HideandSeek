@@ -10,6 +10,10 @@ public class control : MonoBehaviour
 {
 	  public float movementSpeed = 1f;
 	  Rigidbody2D rbody;
+
+	  public GameObject END;
+
+	  public GameObject WIN;
 	//  private bool facingRight = true;
 
 	  //public Animator animator;
@@ -56,6 +60,19 @@ public class control : MonoBehaviour
 		    movementSpeed += 15f;
 	    }
     }
+
+    private void OnCollisionEnter2D(Collision2D die)
+    {
+	    if (die.gameObject.tag == "Enemy")
+	    {
+		    Debug.Log("You died");
+		    movementSpeed = 0f;
+		    END.SetActive(true);
+		    Time.timeScale = 0f;
+	    }
+    }
+    
+    
     //void Flip ()
   //  {
 	   // facingRight = !facingRight;

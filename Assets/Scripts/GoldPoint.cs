@@ -8,6 +8,7 @@ public class GoldPoint : MonoBehaviour
 {
     public int goldPoint;
     public TextMeshProUGUI goldText;
+    public GameObject wincondition;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,11 @@ public class GoldPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (goldPoint == 4)
+        {
+            wincondition.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D coin)
