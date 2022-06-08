@@ -32811,5 +32811,17 @@ PrefabInstance:
       propertyPath: wincondition
       value: 
       objectReference: {fileID: 1051856821}
+    - target: {fileID: 7561914949489686935, guid: 74cbfd5a3614f43d089624bbe48d8bae, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.017627915
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561914949489686935, guid: 74cbfd5a3614f43d089624bbe48d8bae, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.758
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561914949489686935, guid: 74cbfd5a3614f43d089624bbe48d8bae, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.20800944
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74cbfd5a3614f43d089624bbe48d8bae, type: 3}
