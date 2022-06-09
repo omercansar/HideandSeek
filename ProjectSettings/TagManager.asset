@@ -9,6 +9,8 @@ TagManager:
   - Water
   - Obstacle
   - Enemy
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

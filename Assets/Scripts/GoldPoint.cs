@@ -9,6 +9,7 @@ public class GoldPoint : MonoBehaviour
     public int goldPoint;
     public TextMeshProUGUI goldText;
     public GameObject wincondition;
+    public int key = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class GoldPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (goldPoint == 14)
+        if (goldPoint == 10)
         {
             wincondition.SetActive(true);
             Time.timeScale = 0f;
@@ -44,6 +45,20 @@ public class GoldPoint : MonoBehaviour
         {
             goldPoint -= 4;
             goldText.text = goldPoint.ToString();
+        }
+
+        if (coin.gameObject.tag == "Key")
+        {
+            key += 1;
+        }
+
+        if (coin.gameObject.tag == "Door")
+        {
+            if (key == 1)
+            {
+                wincondition.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
     }
 }
