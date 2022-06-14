@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - Key
   - Door
+  - BluePortal
+  - OrangePortal
+  - Event
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - Karakter
   - Ground
   - GoldBig
-  - 
+  - canvas
   - 
   - 
   - 
