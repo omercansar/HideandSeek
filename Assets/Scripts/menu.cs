@@ -12,4 +12,9 @@ public class menu : MonoBehaviour
             
             }
 
+    public void Shop()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

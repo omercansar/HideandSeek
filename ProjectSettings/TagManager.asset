@@ -66,3 +66,6 @@ TagManager:
   - name: Karakter
     uniqueID: 2087511773
     locked: 0
+  - name: New Layer 6
+    uniqueID: 1788116635
+    locked: 0
