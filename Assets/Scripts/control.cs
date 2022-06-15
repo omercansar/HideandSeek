@@ -14,6 +14,8 @@ public class control : MonoBehaviour
 	  public GameObject END;
 
 	  public GameObject WIN;
+
+	public Animator animator;
 	//  private bool facingRight = true;
 
 	  //public Animator animator;
@@ -25,6 +27,7 @@ public class control : MonoBehaviour
       DontDestroyOnLoad(gameObject);
     }
 
+   
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -42,10 +45,12 @@ public class control : MonoBehaviour
 		// Flip ();
 	 rbody.MovePosition(newPos);
 
-	 
-    }
+		animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
-    void OnTriggerEnter2D(Collider2D slow)
+	}
+	
+
+	void OnTriggerEnter2D(Collider2D slow)
     {
 	    if (slow.gameObject.tag == "Water")
 	    {
