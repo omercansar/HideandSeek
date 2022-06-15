@@ -18,18 +18,19 @@ public class control : MonoBehaviour
 	public Animator animator;
 	//  private bool facingRight = true;
 
-	  //public Animator animator;
-	  
-    // Start is called before the first frame update
-    void Awake()
-    {
-      rbody = GetComponent<Rigidbody2D>();
-      DontDestroyOnLoad(gameObject);
-    }
+	//public Animator animator;
 
-   
-    // Update is called once per frame
-    void FixedUpdate()
+	// Start is called before the first frame update
+	void Awake()
+	{
+		rbody = GetComponent<Rigidbody2D>();
+		DontDestroyOnLoad(gameObject);
+
+	}
+	bool facingRight = true;
+
+	// Update is called once per frame
+	void FixedUpdate()
     {
 	   
 	     Vector2 currentPos = rbody.position;
@@ -43,12 +44,29 @@ public class control : MonoBehaviour
 	//	 Flip ();
 	 //else if (horizontalInput < 0 && facingRight)
 		// Flip ();
-	 rbody.MovePosition(newPos);
+		if (horizontalInput > 0 && !facingRight)
+        {
+			Flip();
+        }
+		if (horizontalInput < 0 && facingRight)
+		{
+			Flip();
+		}
+
+
+		rbody.MovePosition(newPos);
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
 	}
-	
+	void Flip()
+    {
+		Vector3 currentScale = gameObject.transform.localScale;
+		currentScale.x *= -1;
+		gameObject.transform.localScale = currentScale;
+
+		facingRight = !facingRight;
+    }
 
 	void OnTriggerEnter2D(Collider2D slow)
     {

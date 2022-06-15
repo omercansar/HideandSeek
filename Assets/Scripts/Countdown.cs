@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
-	public float timeStart = 60;
+	public float timeStart = 5;
 	public Text textBox;
+	public GameObject END;
 
 	// Use this for initialization
 	void Start()
@@ -17,7 +18,22 @@ public class Countdown : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		timeStart -= Time.deltaTime;
-		textBox.text = Mathf.Round(timeStart).ToString();
+		if (timeStart > 0)
+		{
+
+			timeStart -= Time.deltaTime;
+			textBox.text = Mathf.Round(timeStart).ToString();
+		}
+		else
+        {
+			textBox.text = "GameOver!";
+			Debug.Log ("GameOver");
+	
+
+			
+			END.SetActive(true);
+			Time.timeScale = 0f;
+		}
+
 	}
 }
